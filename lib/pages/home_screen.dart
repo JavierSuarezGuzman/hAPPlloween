@@ -4,6 +4,8 @@ SPOOKtubre 2022 */
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
+import 'components/hogares_list.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -14,11 +16,20 @@ class HomeScreen extends StatelessWidget {
         leading: Icon(MdiIcons.halloween),
         foregroundColor: Colors.black,
         centerTitle: true,
-        elevation: 0, //le quita la sombra al appBar
-        title: Text("hAPPloween"),
+        elevation: 21, // 0 le quita la sombra al appBar
+        title: Text("hAPPlloween"),
       ),
       body: Center(
-        child: Text("Holaween"),
+        child: HogaresList(),
+      ),
+//
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          //print('cambiar a ventana de create');
+          Navigator.pushNamed(context, "/create");
+        },
       ),
     );
   }

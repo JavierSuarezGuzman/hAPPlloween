@@ -2,6 +2,7 @@
 SPOOKtubre 2022 */
 
 import 'package:flutter/material.dart';
+import 'package:happloween/pages/crear_screen.dart';
 import 'package:happloween/pages/home_screen.dart';
 
 void main() {
@@ -16,11 +17,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'hAPPloween',
+      title: 'hAPPlloween',
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: HomeScreen(),
+      //home: HomeScreen(),
+      routes: {
+        "/": (context) => HomeScreen(),
+        "/create": (context) => CrearScreen(),
+      },
+      initialRoute: "/",
     );
   }
 }
