@@ -9,8 +9,17 @@ class HogarWidget extends StatelessWidget {
     Key? key,
   }) : super(key: key);*/
 
-  /*final String numero, calle,
-  final bool dulce, disfraz,*/
+  //const HogarWidget({super.key});
+
+  final String numero, calle, imagen;
+  final bool dulce, disfraz;
+
+  HogarWidget(
+      {this.numero = "#625",
+      this.calle = "Avenida Siempre Viva",
+      this.imagen = "img_234957.png",
+      this.dulce = true,
+      this.disfraz = true});
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +39,7 @@ class HogarWidget extends StatelessWidget {
       ),
       child: Row(
         children: [
+          //a la izquierda de todo
           Expanded(
             child: Container(
               //imagen
@@ -39,13 +49,24 @@ class HogarWidget extends StatelessWidget {
               //margin: EdgeInsets.symmetric(vertical: 5),
               margin: EdgeInsets.all(5),
               child: Image(
-                image: AssetImage("assets/images/img_234957.png"),
+                image: AssetImage("assets/images/" + this.imagen),
               ),
             ),
+          ),
+          //entre de la imagen y todo lo demás
+          Row(
+            children: [
+              Container(
+                alignment: Alignment.topCenter,
+                height: 100,
+                child: Icon(MdiIcons.mapMarker, color: Colors.red, size: 33),
+              ),
+            ],
           ),
           Expanded(
             child: Column(
               children: [
+                //arriba del todo
                 Container(
                     margin: EdgeInsets.only(top: 13),
                     //distancia superior
@@ -54,46 +75,47 @@ class HogarWidget extends StatelessWidget {
                     padding: EdgeInsets.all(4),
                     //child: Icon(Icons.location_city),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Icon(
-                          MdiIcons.mapMarker,
-                          color: Colors.red,
-                        ),
                         Text(
-                          "#625",
+                          this.numero,
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 24),
-                        )
+                        ),
                       ],
                     )),
                 Container(
-                    alignment: Alignment.center,
+                    alignment: Alignment.centerLeft,
+                    //alignment: Alignment.center,
                     //color: Colors.black38,
                     //height: 120,
                     padding: EdgeInsets.all(4),
                     //child: Icon(Icons.location_city),
-                    child: Text("Avenida Siempre Viva")),
+                    child: Text(this.calle)),
                 Spacer(),
                 Container(
-                    //color: Colors.black26,
-                    //height: 120,
-                    padding: EdgeInsets.all(4),
-                    //child: Icon(Icons.location_city),
-                    margin: EdgeInsets.only(bottom: 13),
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: Icon(
-                          MdiIcons.skull,
-                          size: 42,
-                        )),
-                        Expanded(
-                            child: Icon(
-                          MdiIcons.candy,
-                          size: 42,
-                        )),
-                      ],
-                    )),
+                  //color: Colors.black26,
+                  //height: 120,
+                  padding: EdgeInsets.all(4),
+                  //child: Icon(Icons.location_city),
+                  margin: EdgeInsets.only(bottom: 13),
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: Icon(
+                        MdiIcons.skull,
+                        size: 42,
+                      )),
+                      Expanded(
+                          //hay que pasar este child como función ifelse
+                          child: Icon(
+                        MdiIcons.candy,
+                        size: 42,
+                      )),
+                    ],
+                  ),
+                ),
+                //abajo del todo
               ],
             ),
           ),
@@ -101,4 +123,7 @@ class HogarWidget extends StatelessWidget {
       ),
     );
   }
+
+  //funcion ifelse para pasar icono candy/candyoff y skull/outlined
+
 }

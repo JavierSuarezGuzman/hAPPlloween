@@ -40,15 +40,23 @@ class _CrearScreenState extends State<CrearScreen> {
                 Expanded(
                   //Imagen
                   flex: 1,
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4),
-                    alignment: Alignment.centerLeft,
-                    height: 100,
-                    width: double.infinity,
-                    //color: Color(Colors.amber),
-                    //alignment: Alignment.center,
-                    child: Image(
-                        image: AssetImage("assets/images/img_234957.png")),
+                  child: Column(
+                    children: [
+                      Container(
+                          margin: EdgeInsets.only(bottom: 9),
+                          child: Text("Agregar imagen")),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 4),
+                        //alignment: Alignment.centerLeft,
+                        height: 100,
+                        width: double.infinity,
+                        //color: Color(Colors.amber),
+                        alignment: Alignment.center,
+
+                        child: Image(
+                            image: AssetImage("assets/images/img_234957.png")),
+                      ),
+                    ],
                   ),
                 ),
                 Expanded(
@@ -57,6 +65,7 @@ class _CrearScreenState extends State<CrearScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
+                          margin: EdgeInsets.only(top: 10),
                           alignment: Alignment.topLeft,
                           child: Text("Número de casa")),
                       Container(
@@ -132,7 +141,10 @@ class _CrearScreenState extends State<CrearScreen> {
                 Expanded(
                   child: Container(
                     child: OutlinedButton(
-                      child: Text("Volver"),
+                      child: Text(
+                        "Volver",
+                        style: TextStyle(color: Colors.black),
+                      ),
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -142,11 +154,12 @@ class _CrearScreenState extends State<CrearScreen> {
                 //Spacer(),
                 Expanded(
                   child: Container(
-                    color: Colors.orange,
+                    //color: Colors.orange,
                     child: OutlinedButton(
                       child: Text(
                         "Guardar",
-                        style: TextStyle(color: Colors.black),
+
+                        //style: TextStyle(color: Colors.black),
                       ),
                       onPressed: () {
                         //pasar formulario
