@@ -1,6 +1,3 @@
-/*Javier Suárez Guzmán
-SPOOKtubre 2022 */
-
 import 'package:flutter/material.dart';
 
 class CrearScreen extends StatefulWidget {
@@ -11,8 +8,8 @@ class CrearScreen extends StatefulWidget {
 }
 
 class _CrearScreenState extends State<CrearScreen> {
-  String? numeroController;
-  String? calleController;
+  /*String? numeroController;
+  String? calleController;*/
 
   @override
   Widget build(BuildContext context) {
@@ -24,83 +21,141 @@ class _CrearScreenState extends State<CrearScreen> {
       body: Container(
         //color: Colors.black38,
         width: double.infinity,
-        height: 250,
+        height: 314,
         margin: EdgeInsets.all(6),
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(color: Colors.orange),
           borderRadius: BorderRadius.circular(10),
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 4),
-                alignment: Alignment.centerLeft,
-                height: 100,
-                width: double.infinity,
-                //color: Color(Colors.amber),
-                //alignment: Alignment.center,
-                child: Image(image: AssetImage("assets/images/img_234957.png")),
-              ),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 6,
             ),
-            Expanded(
-              flex: 2,
-              child: Column(
-                children: [
-                  Container(
+          ],
+        ),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  //Imagen
+                  flex: 1,
+                  child: Container(
                     margin: EdgeInsets.symmetric(horizontal: 4),
                     alignment: Alignment.centerLeft,
-                    height: 52,
+                    height: 100,
                     width: double.infinity,
                     //color: Color(Colors.amber),
                     //alignment: Alignment.center,
-                    child: TextField(
-                      //controller: numeroController,
-                      decoration: InputDecoration(
-                        hintText: "Número de casa",
-                      ),
-                    ),
+                    child: Image(
+                        image: AssetImage("assets/images/img_234957.png")),
                   ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4),
-                    alignment: Alignment.centerLeft,
-                    height: 52,
-                    width: double.infinity,
-                    //color: Color(Colors.amber),
-                    //alignment: Alignment.center,
-                    child: TextField(
-                      //controller: numeroController,
-                      decoration: InputDecoration(
-                        hintText: "Nombre de calle",
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                          alignment: Alignment.topLeft,
+                          child: Text("Número de casa")),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 4),
+                        alignment: Alignment.centerLeft,
+                        height: 33,
+                        width: double.infinity,
+                        //alignment: Alignment.center,
+                        child: TextField(
+                          //controller: numeroController,
+                          decoration: InputDecoration(
+                            hintText: "Número de casa",
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  Container(
-                      margin: EdgeInsets.symmetric(horizontal: 4),
-                      alignment: Alignment.centerLeft,
-                      height: 52,
-                      width: double.infinity,
-                      //color: Color(Colors.amber),
-                      //alignment: Alignment.center,
-                      child: Text("text")),
-                  Container(
-                      margin: EdgeInsets.symmetric(horizontal: 4),
-                      alignment: Alignment.centerLeft,
-                      height: 52,
-                      width: double.infinity,
-                      //color: Color(Colors.amber),
-                      //alignment: Alignment.center,
-                      child: Row(
+                      Divider(),
+                      Container(
+                          alignment: Alignment.topLeft,
+                          child: Text("Nombre de calle")),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: 4),
+                        alignment: Alignment.centerLeft,
+                        height: 33,
+                        width: double.infinity,
+                        //color: Colors.amber,
+                        //alignment: Alignment.center,
+                        child: TextField(
+                          //controller: calleController,
+                          decoration: InputDecoration(
+                            hintText: "Nombre de calle",
+                          ),
+                        ),
+                      ),
+                      Divider(),
+                      Container(
+                          margin: EdgeInsets.symmetric(horizontal: 4),
+                          alignment: Alignment.centerLeft,
+                          height: 33,
+                          width: double.infinity,
+                          child: Text("Dan dulces")),
+                      Container(
+                          //
+                          child: Row(
                         children: [
-                          Text("text"),
-                          Text("text"),
+                          Expanded(child: Text("SI - ")),
+                          Expanded(child: Text("- NO")),
                         ],
                       )),
-                ],
-              ),
-            )
+                      Divider(),
+                      Container(
+                          margin: EdgeInsets.symmetric(horizontal: 4),
+                          alignment: Alignment.centerLeft,
+                          height: 33,
+                          width: double.infinity,
+                          child: Text("Disfraces o ambiente")),
+                      Container(
+                        //
+                        child: Row(
+                          children: [
+                            Expanded(child: Text("SI - ")),
+                            Expanded(child: Text("- NO")),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            Spacer(),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    child: OutlinedButton(
+                      child: Text("Volver"),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                ),
+                //Spacer(),
+                Expanded(
+                  child: Container(
+                    color: Colors.orange,
+                    child: OutlinedButton(
+                      child: Text(
+                        "Guardar",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      onPressed: () {
+                        //pasar formulario
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
