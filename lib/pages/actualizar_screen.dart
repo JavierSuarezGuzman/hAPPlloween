@@ -3,14 +3,14 @@ SPOOKtubre 2022 */
 
 import 'package:flutter/material.dart';
 
-class CrearScreen extends StatefulWidget {
-  const CrearScreen({super.key});
+class ActualizarScreen extends StatefulWidget {
+  const ActualizarScreen({super.key});
 
   @override
-  State<CrearScreen> createState() => _CrearScreenState();
+  State<ActualizarScreen> createState() => _ActualizarScreenState();
 }
 
-class _CrearScreenState extends State<CrearScreen> {
+class _ActualizarScreenState extends State<ActualizarScreen> {
   /*String? numeroController;
   String? calleController;*/
 
@@ -21,8 +21,37 @@ class _CrearScreenState extends State<CrearScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Crear un registro"),
+        title: Text("Actualizar un registro"),
         foregroundColor: Colors.black,
+        actions: [
+          IconButton(
+              icon: Icon(Icons.delete),
+              onPressed: () {
+                //showDialog y en el builder el AlertDialog preguntando si está seguro que desea eliminar
+                /* content: const Text('Seguro que desea eliminar'),
+                    actions: <Widget>[
+                      TextButton(
+                        style: TextButton.styleFrom(
+                          textStyle: Theme.of(context).textTheme.labelLarge,
+                        ),
+                        child: const Text('No'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      TextButton(
+                        style: TextButton.styleFrom(
+                          textStyle: Theme.of(context).textTheme.labelLarge,
+                        ),
+                        child: const Text('Eliminar'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                    */
+              })
+        ],
       ),
       body: Container(
         width: double.infinity,
@@ -49,7 +78,7 @@ class _CrearScreenState extends State<CrearScreen> {
                     children: [
                       Container(
                           margin: EdgeInsets.only(bottom: 13),
-                          child: Text("Agregar imagen")),
+                          child: Text("Cambiar imagen")),
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 4),
                         height: 100,
@@ -69,7 +98,7 @@ class _CrearScreenState extends State<CrearScreen> {
                       Container(
                           margin: EdgeInsets.only(top: 10),
                           alignment: Alignment.topLeft,
-                          child: Text("Número de casa")),
+                          child: Text("Cambiar número de casa")),
                       Container(
                         margin: EdgeInsets.all(4),
                         height: 42,
@@ -78,15 +107,13 @@ class _CrearScreenState extends State<CrearScreen> {
                           //controller: numeroController,
                           decoration: InputDecoration(
                             hintText: "Número de casa",
-                            /*cambiar los hint text por 
-                            labelText: "Número de casa",*/
                           ),
                         ),
                       ),
                       Divider(),
                       Container(
                           alignment: Alignment.topLeft,
-                          child: Text("Nombre de calle")),
+                          child: Text("Cambiar nombre de calle")),
                       Container(
                         margin: EdgeInsets.all(4),
                         height: 42,
@@ -104,7 +131,7 @@ class _CrearScreenState extends State<CrearScreen> {
                           alignment: Alignment.bottomLeft,
                           height: 33,
                           width: double.infinity,
-                          child: Text("Entregan dulces")),
+                          child: Text("Siguen entregando dulces")),
                       Container(
                           height: 42,
                           child: Row(
@@ -141,7 +168,7 @@ class _CrearScreenState extends State<CrearScreen> {
                           alignment: Alignment.bottomLeft,
                           height: 33,
                           width: double.infinity,
-                          child: Text("Existe ambientación o disfraces")),
+                          child: Text("Existe aún ambientación")),
                       Container(
                         height: 42,
                         child: Row(
@@ -203,7 +230,7 @@ class _CrearScreenState extends State<CrearScreen> {
                           backgroundColor: Colors.orange,
                           side: BorderSide(color: Colors.deepOrange)),
                       child: Text("Guardar",
-                          style: TextStyle(color: Colors.white)),
+                          style: TextStyle(color: Colors.black)),
                       onPressed: () {
                         //pasar formulario
                       },
@@ -211,10 +238,12 @@ class _CrearScreenState extends State<CrearScreen> {
                     */
                     child: OutlinedButton(
                       child: Text(
-                        "Guardar",
+                        "Actualizar",
                         //style: TextStyle(color: Colors.black),
                       ),
                       onPressed: () {
+                        //showDialog para confirmar que quiere actualizar
+
                         //pasar formulario
                       },
                     ),

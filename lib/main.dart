@@ -2,6 +2,7 @@
 SPOOKtubre 2022 */
 
 import 'package:flutter/material.dart';
+import 'package:happloween/pages/actualizar_screen.dart';
 import 'package:happloween/pages/crear_screen.dart';
 import 'package:happloween/pages/home_screen.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => HomeScreen(),
         "/create": (context) => CrearScreen(),
+        "/update": (context) => ActualizarScreen(),
       },
       initialRoute: "/",
     );
