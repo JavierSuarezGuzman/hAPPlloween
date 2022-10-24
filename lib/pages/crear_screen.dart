@@ -22,7 +22,6 @@ class _CrearScreenState extends State<CrearScreen> {
         foregroundColor: Colors.black,
       ),
       body: Container(
-        //color: Colors.black38,
         width: double.infinity,
         height: 420,
         margin: EdgeInsets.all(6),
@@ -46,16 +45,13 @@ class _CrearScreenState extends State<CrearScreen> {
                   child: Column(
                     children: [
                       Container(
-                          margin: EdgeInsets.only(bottom: 9),
+                          margin: EdgeInsets.only(bottom: 13),
                           child: Text("Agregar imagen")),
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 4),
-                        //alignment: Alignment.centerLeft,
                         height: 100,
                         width: double.infinity,
-                        //color: Color(Colors.amber),
                         alignment: Alignment.center,
-
                         child: Image(
                             image: AssetImage("assets/images/img_234957.png")),
                       ),
@@ -68,16 +64,13 @@ class _CrearScreenState extends State<CrearScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
-                          //height: 42,
                           margin: EdgeInsets.only(top: 10),
                           alignment: Alignment.topLeft,
                           child: Text("Número de casa")),
                       Container(
                         margin: EdgeInsets.all(4),
-                        alignment: Alignment.centerLeft,
                         height: 42,
                         width: double.infinity,
-                        //alignment: Alignment.center,
                         child: TextField(
                           //controller: numeroController,
                           decoration: InputDecoration(
@@ -91,11 +84,8 @@ class _CrearScreenState extends State<CrearScreen> {
                           child: Text("Nombre de calle")),
                       Container(
                         margin: EdgeInsets.all(4),
-                        alignment: Alignment.centerLeft,
                         height: 42,
                         width: double.infinity,
-                        //color: Colors.amber,
-                        //alignment: Alignment.center,
                         child: TextField(
                           //controller: calleController,
                           decoration: InputDecoration(
@@ -106,32 +96,35 @@ class _CrearScreenState extends State<CrearScreen> {
                       Divider(),
                       Container(
                           margin: EdgeInsets.symmetric(horizontal: 4),
-                          alignment: Alignment.centerLeft,
+                          alignment: Alignment.bottomLeft,
                           height: 33,
                           width: double.infinity,
-                          child: Text("Dan dulces")),
+                          child: Text("Entregan dulces")),
                       Container(
-                          //
                           height: 42,
                           child: Row(
                             children: [
                               Expanded(
                                 child: RadioListTile<bool>(
                                   groupValue: dulceRadio,
-                                  title: Text("SI"),
+                                  title: Text("Si"),
                                   value: true,
-                                  onChanged: (dulce) {
-                                    print("object");
+                                  onChanged: (dulces) {
+                                    setState(() {
+                                      dulceRadio = dulces!;
+                                    });
                                   },
                                 ),
                               ),
                               Expanded(
                                 child: RadioListTile<bool>(
                                   groupValue: dulceRadio,
-                                  title: Text("NO"),
+                                  title: Text("No"),
                                   value: false,
-                                  onChanged: (dulce) {
-                                    print("object");
+                                  onChanged: (dulces) {
+                                    setState(() {
+                                      dulceRadio = dulces!;
+                                    });
                                   },
                                 ),
                               ),
@@ -140,48 +133,35 @@ class _CrearScreenState extends State<CrearScreen> {
                       Divider(),
                       Container(
                           margin: EdgeInsets.symmetric(horizontal: 4),
-                          alignment: Alignment.centerLeft,
+                          alignment: Alignment.bottomLeft,
                           height: 33,
                           width: double.infinity,
-                          child: Text("Disfraces o ambientación")),
+                          child: Text("Existe ambientación o disfraces")),
                       Container(
-                        //
                         height: 42,
                         child: Row(
                           children: [
-                            /*RadioListTile<bool>(
-                              groupValue: disfrazRadio,
-                              title: Text("SI"),
-                              value: true,
-                              onChanged: (disfraz) {
-                                print("object");
-                              },
-                            ),
-                            RadioListTile<bool>(
-                              groupValue: disfrazRadio,
-                              title: Text("NO"),
-                              value: false,
-                              onChanged: (disfraz) {
-                                print("object");
-                              },
-                            ),*/
                             Expanded(
                               child: RadioListTile<bool>(
                                 groupValue: disfrazRadio,
-                                title: Text("SI"),
+                                title: Text("Si"),
                                 value: true,
                                 onChanged: (disfraz) {
-                                  print("object");
+                                  setState(() {
+                                    disfrazRadio = disfraz!;
+                                  });
                                 },
                               ),
                             ),
                             Expanded(
                               child: RadioListTile<bool>(
                                 groupValue: disfrazRadio,
-                                title: Text("NO"),
+                                title: Text("No"),
                                 value: false,
                                 onChanged: (disfraz) {
-                                  print("object");
+                                  setState(() {
+                                    disfrazRadio = disfraz!;
+                                  });
                                 },
                               ),
                             ),
@@ -209,14 +189,24 @@ class _CrearScreenState extends State<CrearScreen> {
                     ),
                   ),
                 ),
-                //Spacer(),
                 Expanded(
                   child: Container(
+                    /* opción de botón
                     //color: Colors.orange,
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                          backgroundColor: Colors.orange,
+                          side: BorderSide(color: Colors.deepOrange)),
+                      child: Text("Guardar",
+                          style: TextStyle(color: Colors.black)),
+                      onPressed: () {
+                        //pasar formulario
+                      },
+                    ),
+                    */
                     child: OutlinedButton(
                       child: Text(
                         "Guardar",
-
                         //style: TextStyle(color: Colors.black),
                       ),
                       onPressed: () {
