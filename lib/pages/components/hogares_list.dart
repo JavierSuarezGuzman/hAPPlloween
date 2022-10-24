@@ -23,6 +23,9 @@ class HogaresList extends StatelessWidget {
             imagen: "luxury.webp",
             numero: "2801",
             calle: "Av. Las Nieves",
+            dulce: false,
+            disfraz: false,
+            visible: true,
           ),
           HogarWidget(
             imagen: "house9.jpg",
@@ -30,6 +33,7 @@ class HogaresList extends StatelessWidget {
             calle: "Calle Falsa",
             dulce: false,
             disfraz: false,
+            visible: true,
           ),
           HogarWidget(
             imagen: "two.webp",
@@ -37,6 +41,7 @@ class HogaresList extends StatelessWidget {
             calle: "Av. Principal #625",
             dulce: true,
             disfraz: false,
+            visible: true,
           ),
           HogarWidget(
             imagen: "children.webp",
@@ -44,13 +49,15 @@ class HogaresList extends StatelessWidget {
             calle: "",
             dulce: true,
             disfraz: false,
+            visible: true,
           ),
           HogarWidget(
               /*imagen: "",
             numero: "",
             calle: "",
             dulce: false,
-            disfraz: false,*/
+            disfraz: false,
+            visible: true,*/
               ),
           HogarWidget(
             //imagen: "",
@@ -58,6 +65,7 @@ class HogaresList extends StatelessWidget {
             calle: "",
             dulce: false,
             disfraz: false,
+            visible: true,
           ),
           HogarWidget(),
         ],

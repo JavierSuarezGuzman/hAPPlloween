@@ -12,14 +12,15 @@ class HogarWidget extends StatelessWidget {
   //const HogarWidget({super.key});
 
   final String numero, calle, imagen;
-  final bool dulce, disfraz;
+  final bool dulce, disfraz, visible;
 
   HogarWidget(
       {this.numero = "#625",
       this.calle = "Avenida Siempre Viva",
       this.imagen = "img_234957.png",
       this.dulce = true,
-      this.disfraz = true});
+      this.disfraz = true,
+      this.visible = true});
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +38,7 @@ class HogarWidget extends StatelessWidget {
           ),
         ],
       ),
+
       child: Row(
         children: [
           //a la izquierda de todo
@@ -57,6 +59,7 @@ class HogarWidget extends StatelessWidget {
           Row(
             children: [
               Container(
+                //color: Colors.black26,
                 alignment: Alignment.topCenter,
                 height: 100,
                 child: Icon(MdiIcons.mapMarker, color: Colors.red, size: 33),
