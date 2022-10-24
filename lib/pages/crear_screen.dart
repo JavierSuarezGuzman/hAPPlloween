@@ -11,6 +11,9 @@ class _CrearScreenState extends State<CrearScreen> {
   /*String? numeroController;
   String? calleController;*/
 
+  bool dulceRadio = true;
+  bool disfrazRadio = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +24,7 @@ class _CrearScreenState extends State<CrearScreen> {
       body: Container(
         //color: Colors.black38,
         width: double.infinity,
-        height: 314,
+        height: 420,
         margin: EdgeInsets.all(6),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -65,13 +68,14 @@ class _CrearScreenState extends State<CrearScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
+                          //height: 42,
                           margin: EdgeInsets.only(top: 10),
                           alignment: Alignment.topLeft,
                           child: Text("Número de casa")),
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 4),
+                        margin: EdgeInsets.all(4),
                         alignment: Alignment.centerLeft,
-                        height: 33,
+                        height: 42,
                         width: double.infinity,
                         //alignment: Alignment.center,
                         child: TextField(
@@ -86,9 +90,9 @@ class _CrearScreenState extends State<CrearScreen> {
                           alignment: Alignment.topLeft,
                           child: Text("Nombre de calle")),
                       Container(
-                        margin: EdgeInsets.symmetric(horizontal: 4),
+                        margin: EdgeInsets.all(4),
                         alignment: Alignment.centerLeft,
-                        height: 33,
+                        height: 42,
                         width: double.infinity,
                         //color: Colors.amber,
                         //alignment: Alignment.center,
@@ -108,25 +112,79 @@ class _CrearScreenState extends State<CrearScreen> {
                           child: Text("Dan dulces")),
                       Container(
                           //
+                          height: 42,
                           child: Row(
-                        children: [
-                          Expanded(child: Text("SI - ")),
-                          Expanded(child: Text("- NO")),
-                        ],
-                      )),
+                            children: [
+                              Expanded(
+                                child: RadioListTile<bool>(
+                                  groupValue: dulceRadio,
+                                  title: Text("SI"),
+                                  value: true,
+                                  onChanged: (dulce) {
+                                    print("object");
+                                  },
+                                ),
+                              ),
+                              Expanded(
+                                child: RadioListTile<bool>(
+                                  groupValue: dulceRadio,
+                                  title: Text("NO"),
+                                  value: false,
+                                  onChanged: (dulce) {
+                                    print("object");
+                                  },
+                                ),
+                              ),
+                            ],
+                          )),
                       Divider(),
                       Container(
                           margin: EdgeInsets.symmetric(horizontal: 4),
                           alignment: Alignment.centerLeft,
                           height: 33,
                           width: double.infinity,
-                          child: Text("Disfraces o ambiente")),
+                          child: Text("Disfraces o ambientación")),
                       Container(
                         //
+                        height: 42,
                         child: Row(
                           children: [
-                            Expanded(child: Text("SI - ")),
-                            Expanded(child: Text("- NO")),
+                            /*RadioListTile<bool>(
+                              groupValue: disfrazRadio,
+                              title: Text("SI"),
+                              value: true,
+                              onChanged: (disfraz) {
+                                print("object");
+                              },
+                            ),
+                            RadioListTile<bool>(
+                              groupValue: disfrazRadio,
+                              title: Text("NO"),
+                              value: false,
+                              onChanged: (disfraz) {
+                                print("object");
+                              },
+                            ),*/
+                            Expanded(
+                              child: RadioListTile<bool>(
+                                groupValue: disfrazRadio,
+                                title: Text("SI"),
+                                value: true,
+                                onChanged: (disfraz) {
+                                  print("object");
+                                },
+                              ),
+                            ),
+                            Expanded(
+                              child: RadioListTile<bool>(
+                                groupValue: disfrazRadio,
+                                title: Text("NO"),
+                                value: false,
+                                onChanged: (disfraz) {
+                                  print("object");
+                                },
+                              ),
+                            ),
                           ],
                         ),
                       ),
