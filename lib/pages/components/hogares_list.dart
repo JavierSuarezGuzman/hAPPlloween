@@ -10,7 +10,8 @@ class HogaresList extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  /*  final listaHogares = [
+  /*  arreglo de dependencias
+  final listaHogares = [
     {
       'imagen' : 'luxury.webp',
       'numero' : '2801',
@@ -69,6 +70,19 @@ class HogaresList extends StatelessWidget {
       //margin: EdgeInsets.all(6),
       color: Colors.black12,
       child: ListView(
+        /* mapeo del arreglo de dependencias
+        children: listaHogares.map((h){
+          return HogarWidget(
+            imagen: h['imagen'],
+            numero: h['numero'],
+            calle: h['calle'],
+            dulce: h['dulce'],
+            disfraz: h['disfraz'],
+            visible: h['visible],
+          );
+        }).toList(),
+        */
+
         children: [
           HogarWidget(),
           HogarWidget(

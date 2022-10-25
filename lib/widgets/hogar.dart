@@ -4,7 +4,7 @@ SPOOKtubre 2022 */
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class HogarWidget extends StatelessWidget {
+class HogarWidget extends StatefulWidget {
   /*const HogarWidget({
     Key? key,
   }) : super(key: key);*/
@@ -21,6 +21,12 @@ class HogarWidget extends StatelessWidget {
       this.dulce = true,
       this.disfraz = true,
       this.visible = true});
+
+  @override
+  State<HogarWidget> createState() => _HogarWidgetState();
+}
+
+class _HogarWidgetState extends State<HogarWidget> {
 /*
   HogarWidget(
       {this.numero = "#625",
@@ -60,7 +66,7 @@ class HogarWidget extends StatelessWidget {
                 //margin: EdgeInsets.symmetric(vertical: 5),
                 margin: EdgeInsets.all(5),
                 child: Image(
-                  image: AssetImage("assets/images/" + this.imagen),
+                  image: AssetImage("assets/images/" + this.widget.imagen),
                 ),
               ),
             ),
@@ -90,7 +96,7 @@ class HogarWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(
-                            this.numero,
+                            this.widget.numero,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 24),
                           ),
@@ -103,7 +109,7 @@ class HogarWidget extends StatelessWidget {
                       //height: 120,
                       padding: EdgeInsets.all(4),
                       //child: Icon(Icons.location_city),
-                      child: Text(this.calle)),
+                      child: Text(this.widget.calle)),
                   Spacer(),
                   Container(
                     //color: Colors.black26,
@@ -139,7 +145,4 @@ class HogarWidget extends StatelessWidget {
       },
     );
   }
-
-  //funcion ifelse para pasar icono candy/candyoff y skull/outlined
-
 }
