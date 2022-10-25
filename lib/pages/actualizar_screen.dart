@@ -141,9 +141,9 @@ class _ActualizarScreenState extends State<ActualizarScreen> {
                                   groupValue: dulceRadio,
                                   title: Text("Si"),
                                   value: true,
-                                  onChanged: (dulces) {
+                                  onChanged: (dulce) {
                                     setState(() {
-                                      dulceRadio = dulces!;
+                                      dulceRadio = dulce!;
                                     });
                                   },
                                 ),
@@ -153,9 +153,9 @@ class _ActualizarScreenState extends State<ActualizarScreen> {
                                   groupValue: dulceRadio,
                                   title: Text("No"),
                                   value: false,
-                                  onChanged: (dulces) {
+                                  onChanged: (dulce) {
                                     setState(() {
-                                      dulceRadio = dulces!;
+                                      dulceRadio = dulce!;
                                     });
                                   },
                                 ),

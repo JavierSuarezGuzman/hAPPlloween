@@ -15,13 +15,21 @@ class HogarWidget extends StatelessWidget {
   final bool dulce, disfraz, visible;
 
   HogarWidget(
+      {this.imagen = "img_234957.png",
+      this.numero = "",
+      this.calle = "",
+      this.dulce = true,
+      this.disfraz = true,
+      this.visible = true});
+/*
+  HogarWidget(
       {this.numero = "#625",
       this.calle = "Avenida Siempre Viva",
       this.imagen = "img_234957.png",
       this.dulce = true,
       this.disfraz = true,
       this.visible = true});
-
+*/
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
