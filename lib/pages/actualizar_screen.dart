@@ -51,6 +51,7 @@ class _ActualizarScreenState extends State<ActualizarScreen> {
               })
         ],
       ),
+      backgroundColor: Colors.white70,
       body: Form(
         key: formKey,
         child: Container(
@@ -63,7 +64,7 @@ class _ActualizarScreenState extends State<ActualizarScreen> {
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(
-                blurRadius: 6,
+                blurRadius: 69,
               ),
             ],
           ),
@@ -262,12 +263,37 @@ class _ActualizarScreenState extends State<ActualizarScreen> {
       children: [
         Container(
             margin: EdgeInsets.only(bottom: 13), child: Text("Cambiar imagen")),
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 4),
-          height: 100,
-          width: double.infinity,
-          alignment: Alignment.center,
-          child: Image(image: AssetImage("assets/images/img_234957.png")),
+        GestureDetector(
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 4),
+            height: 100,
+            width: double.infinity,
+            alignment: Alignment.center,
+            child: Image(image: AssetImage("assets/images/img_234957.png")),
+          ),
+          onTap: () {
+            showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    content: Text("Agregar imagen con:"),
+                    actions: [
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                            //llamar a la galería
+                          },
+                          child: Text("Galería")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                            //llamar a la cámara
+                          },
+                          child: Text("Camara")),
+                    ],
+                  );
+                });
+          },
         ),
       ],
     );

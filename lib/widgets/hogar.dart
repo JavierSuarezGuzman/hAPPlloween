@@ -40,20 +40,23 @@ class _HogarWidgetState extends State<HogarWidget> {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        //color: Colors.black38,
         height: 150,
         margin: EdgeInsets.all(6),
         decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: Colors.orange),
+          color: Color.fromARGB(246, 255, 250, 242),
+          //color: Colors.amber,
+          //color: Colors.white,
+          border: Border.all(color: Colors.amber),
           borderRadius: BorderRadius.circular(10),
+          /*image: DecorationImage(
+              image: AssetImage("assets/images/spider.jpg"),
+              fit: BoxFit.fitWidth),*/
           boxShadow: [
             BoxShadow(
               blurRadius: 6,
             ),
           ],
         ),
-
         child: Row(
           children: [
             //a la izquierda de todo
@@ -67,6 +70,7 @@ class _HogarWidgetState extends State<HogarWidget> {
                 margin: EdgeInsets.all(5),
                 child: Image(
                   image: AssetImage("assets/images/" + this.widget.imagen),
+                  fit: BoxFit.fitWidth,
                 ),
               ),
             ),

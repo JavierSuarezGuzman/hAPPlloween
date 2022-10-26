@@ -26,6 +26,7 @@ class _CrearScreenState extends State<CrearScreen> {
         title: Text("Crear un registro"),
         foregroundColor: Colors.black,
       ),
+      backgroundColor: Colors.white70,
       body: Form(
         key: formKey,
         child: Container(
@@ -33,12 +34,15 @@ class _CrearScreenState extends State<CrearScreen> {
           height: 420,
           margin: EdgeInsets.all(6),
           decoration: BoxDecoration(
+            /*image: DecorationImage(
+                image: AssetImage("assets/images/spider.jpg"),
+                fit: BoxFit.cover),*/
             color: Colors.white,
             border: Border.all(color: Colors.orange),
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(
-                blurRadius: 6,
+                blurRadius: 69,
               ),
             ],
           ),

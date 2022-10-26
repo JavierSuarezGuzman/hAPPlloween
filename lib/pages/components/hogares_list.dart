@@ -84,9 +84,17 @@ class HogaresList extends StatelessWidget {
         */
 
         children: [
-          HogarWidget(),
+          //HogarWidget(),
           HogarWidget(
-            imagen: "luxury.webp",
+            imagen: "front2.jpg",
+            numero: "#1428",
+            calle: "Calle Olmo",
+            dulce: false,
+            disfraz: false,
+            visible: true,
+          ),
+          HogarWidget(
+            imagen: "house.jpg",
             numero: "2801",
             calle: "Av. Las Nieves",
             dulce: false,
@@ -102,7 +110,7 @@ class HogaresList extends StatelessWidget {
             visible: true,
           ),
           HogarWidget(
-            imagen: "two.webp",
+            imagen: "wreath.jpg",
             numero: "9966",
             calle: "Av. Principal #625",
             dulce: true,
@@ -110,10 +118,42 @@ class HogaresList extends StatelessWidget {
             visible: true,
           ),
           HogarWidget(
-            imagen: "children.webp",
+            imagen: "two.webp",
             numero: "#1",
             calle: "",
             dulce: true,
+            disfraz: false,
+            visible: true,
+          ),
+          HogarWidget(
+            imagen: "front.webp",
+            numero: "742",
+            calle: "Evergreen Terrace",
+            dulce: false,
+            disfraz: false,
+            visible: true,
+          ),
+          HogarWidget(
+            imagen: "la.jpg",
+            numero: "",
+            calle: "",
+            dulce: false,
+            disfraz: false,
+            visible: true,
+          ),
+          HogarWidget(
+            imagen: "children.webp",
+            numero: "",
+            calle: "",
+            dulce: false,
+            disfraz: false,
+            visible: true,
+          ),
+          HogarWidget(
+            imagen: "luxury.webp",
+            numero: "",
+            calle: "",
+            dulce: false,
             disfraz: false,
             visible: true,
           ),

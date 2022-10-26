@@ -19,6 +19,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 21, // 0 le quita la sombra al appBar
         title: Text("hAPPlloween"),
       ),
+      backgroundColor: Colors.white60,
       body: Center(
         child: HogaresList(),
       ),
