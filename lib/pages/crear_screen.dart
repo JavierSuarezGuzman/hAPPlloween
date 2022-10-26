@@ -221,12 +221,37 @@ class _CrearScreenState extends State<CrearScreen> {
       children: [
         Container(
             margin: EdgeInsets.only(bottom: 13), child: Text("Agregar imagen")),
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 4),
-          height: 100,
-          width: double.infinity,
-          alignment: Alignment.center,
-          child: Image(image: AssetImage("assets/images/img_234957.png")),
+        GestureDetector(
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 4),
+            height: 100,
+            width: double.infinity,
+            alignment: Alignment.center,
+            child: Image(image: AssetImage("assets/images/img_234957.png")),
+          ),
+          onTap: () {
+            showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    content: Text("Agregar imagen con:"),
+                    actions: [
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                            //llamar a la galería
+                          },
+                          child: Text("Galería")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                            //llamar a la cámara
+                          },
+                          child: Text("Camara")),
+                    ],
+                  );
+                });
+          },
         ),
       ],
     );
